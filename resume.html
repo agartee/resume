@@ -7,10 +7,10 @@
                 --font-size: 16px;
                 --printed-font-size: 12px;
                 --font-family: Calibri;
-                --left-column-width: 320px;
-                --left-column-color: gainsboro;
-                --right-column-width: 800px;
-                --right-column-color: white;
+                --info-container-width: 320px;
+                --info-container-color: gainsboro;
+                --body-container-width: 800px;
+                --body-container-color: white;
                 --avatar-border-width: 25px;
                 --avatar-padding: 40px;
                 --info-icon-width: 30px;
@@ -27,38 +27,39 @@
                 font-size: var(--font-size);
             }
 
-            .left-column {
+            .info-container {
                 position: absolute;
                 left: 0;
-                right: 0;
+                top: 0;
                 height: 100%;
-                width: var(--left-column-width);
-                background-color: var(--left-column-color);
+                width: var(--info-container-width);
+                background-color: var(--info-container-color);
             }
 
-                .left-column h1, 
-                .left-column h2,
-                .left-column h3 {
+                .info-container h1, 
+                .info-container h2,
+                .info-container h3 {
                     margin-left: 30px;
                     margin-top: 4px;
                 }
 
-            .right-column {
+            .body-container {
                 position: absolute;
                 right: 0;
+                top: 0;
                 height: 100%;
-                left: var(--left-column-width);
-                background-color: var(--right-column-color);
+                left: var(--info-container-width);
+                background-color: var(--body-container-color);
                 overflow-y: scroll;
                 overflow-x:hidden;
             }
 
-                .right-column h1, 
-                .right-column h2 {
+                .body-container h1, 
+                .body-container h2 {
                     margin-left: 30px;
                 }
 
-                .right-column h1 {
+                .body-container h1 {
                     text-decoration: underline;
                 }
 
@@ -68,8 +69,8 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: var(--left-column-width);
-                width: var(--left-column-width);
+                height: var(--info-container-width);
+                width: var(--info-container-width);
             }
 
             .avatar {
@@ -119,7 +120,7 @@
 
             .experience {
                 break-inside: avoid;
-                max-width: var(--right-column-width);
+                max-width: var(--body-container-width);
             }
 
             .experience .job-title, 
@@ -152,7 +153,7 @@
             }
 
             .skills {
-                max-width: var(--right-column-width);
+                max-width: var(--body-container-width);
             }
 
             .skills  ul {
@@ -169,7 +170,7 @@
             }
 
             @media print {
-                .right-column {
+                .body-container {
                     overflow-x: visible;
                     overflow-y: visible;
                 }
@@ -181,7 +182,7 @@
 
     <body>
 
-        <div class="left-column">
+        <div class="info-container">
 
             <div class="avatar-container">
                 <img class="avatar" src="C:\Users\agart\OneDrive\Pictures\Profile Pics\me.jpg" alt="Avatar">
@@ -232,7 +233,7 @@
             
         </div>
 
-        <div class="right-column">
+        <div class="body-container">
 
             <h1>Work Experience</h1>
 
@@ -337,7 +338,7 @@
                     <li><a href="https://www.appveyor.com/">AppVeyor (CI/CD provider)</a></li>
                     <li><a href="https://auth0.com/">Auth0 (OAuth2/OpenID Connect provider)</a></li>
                     <li>Azure Service Bus</li>
-                    <li>Domain Driven Development</li>
+                    <li>Domain Driven Design (DDD)</li>
                     <li><a href="https://github.com/">Git/GitHub</a></li>
                     <li>HTML/CSS</li>
                     <li>Microservices Architecture</li>
