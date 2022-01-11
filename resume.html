@@ -37,7 +37,8 @@
             }
 
                 .left-column h1, 
-                .left-column h2 {
+                .left-column h2,
+                .left-column h3 {
                     margin-left: 30px;
                     margin-top: 4px;
                 }
@@ -94,6 +95,11 @@
                 margin-right: 30px;
             }
 
+            .about {
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+
             .info-detail {
                 /* allow urls to wrap */
                 overflow-wrap: break-word;
@@ -106,7 +112,7 @@
                 hyphens: auto;
             }
 
-            .info-detail a {
+            .info-detail a, .about a, .skills a {
                 color: black;
                 text-decoration: none;
             }
@@ -143,6 +149,23 @@
 
             .experience .technologies {
                 margin-top: 20px;
+            }
+
+            .skills {
+                max-width: var(--right-column-width);
+            }
+
+            .skills  ul {
+                margin-left: 30px;
+            }
+
+            .skills .svg {
+                height: 1rem;
+            }
+
+            .skills ul {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             @media print {
@@ -200,6 +223,11 @@
                 <div class="info-detail">
                     @adamgartee
                 </div>
+            </div>
+
+            <h3>About</h3>
+            <div class="about">
+                My technology passions include the Azure platform and .NET. I am always looking for ways to improve my understanding of systems architecture and am especially interested in CQRS/ES/Microservices patterns. I have built and am actively maintaining a series of light-weight libraries to streamline my CQRS and Event Sourced applications with a built-in CLI (Command-Line Integration), available via NuGet at <a href="https://www.nuget.org/packages?q=Brickweave">https://www.nuget.org/packages?q=Brickweave</a>.
             </div>
             
         </div>
@@ -274,6 +302,81 @@
                 <span class="technologies">Tech: .NET Framework, ASP.NET, SQL Server, VBA</span>
             </div>
 
+            <h1>Skills</h1>
+
+            <div class="skills">
+                <h2>
+                    Expert (
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    )
+                </h2>
+                <ul>
+                    <li><a href="https://docs.microsoft.com/en-us/aspnet/core/">ASP.NET/ASP.NET Core</a></li>
+                    <li>C#</li>
+                    <li>Entity Framework</li>
+                </ul>
+            </div>
+
+            <div class="skills">
+                <h2>
+                    Advanced (
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
+                    )
+                </h2>
+                <ul>
+                    <li>.NET Framework (various releases)</li>
+                    <li>Agile Methodologies</li>
+                    <li><a href="https://www.appveyor.com/">AppVeyor (CI/CD provider)</a></li>
+                    <li><a href="https://auth0.com/">Auth0 (OAuth2/OpenID Connect provider)</a></li>
+                    <li>Azure Service Bus</li>
+                    <li>Domain Driven Development</li>
+                    <li><a href="https://github.com/">Git/GitHub</a></li>
+                    <li>HTML/CSS</li>
+                    <li>Microservices Architecture</li>
+                    <li><a href="https://www.microsoft.com/en-us/sql-server/">Microsoft SQL Server</a></li>
+                    <li>Test Driven Development</li>
+                </ul>
+            </div>
+
+            <div class="skills">
+                <h2>
+                    Familiar (
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
+                    <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
+                    )
+                </h2>
+                <ul>
+                    <li>Active Directory</li>
+                    <li><a href="https://angular.io/">Angular</a></li>
+                    <li><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB</a></li>
+                    <li><a href="https://azure.microsoft.com/en-us/services/service-fabric/">Azure Service Fabric</a></li>
+                    <li><a href="https://identityserver4.readthedocs.io/">Identity Server</a></li>
+                    <li><a href="https://www.java.com">Java</a></li>
+                    <li><a href="https://www.java.com">JavaScript</a></li>
+                    <li><a href="https://www.jenkins.io/">Jenkins (CI/CD provider)</a></li>
+                    <li><a href="https://github.com/jbogard/MediatR/">MediatR</a></li>
+                    <li>MySQL</li>
+                    <li><a href="https://nodejs.org/">Node.js</a></li>
+                    <li>OAuth2/OpenID Connect</li>
+                    <li>Oracle</li>
+                    <li><a href="https://reactjs.org/">React</a></li>
+                    <li>SQL Server Reporting Services (SSRS)</li>
+                    <li><a href="https://stenciljs.com/"></a>Stencil.js</li>
+                    <li><a href="https://vuejs.org/">Vue.js</a></li>
+                    <li>WPF/XAML</li>
+                </ul>
+            </div>
         </div>
 
     </body>
