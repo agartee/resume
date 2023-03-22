@@ -6,98 +6,91 @@
             :root {
                 --font-size: 16px;
                 --printed-font-size: 12px;
+                --margin-large: 30px;
+                --margin-small: 8px;
                 --font-family: Calibri;
                 --info-container-height: 200px;
                 --info-container-width: 320px;
-                --info-container-color: gainsboro;
+                --info-container-color: #8ab5e3;
                 --body-container-width: 800px;
                 --body-container-color: white;
                 --avatar-border-width: 25px;
                 --avatar-padding: 40px;
-                --info-icon-width: 30px;
-                --info-icon-height: 30px;
-                /* retain colors when printing */
-                color-adjust: exact!important;
-                -webkit-print-color-adjust: exact!important;
             }
 
             body {
-                margin: 0px;
+                margin: 0;
+                padding: 0;
                 color: var(--text-color);
                 font-family: var(--font-family);
                 font-size: var(--font-size);
             }
 
-            .info-container {
-                position: absolute;
-                left: 0;
-                top: 0;
-                height: var(--info-container-height);
-                width: 100%;
-                background-color: var(--info-container-color);
+            .info-container h1, 
+            .info-container h2,
+            .info-container h3 {
+                display: inline;
+                margin: 0;
             }
 
-                .info-container h1, 
-                .info-container h2,
-                .info-container h3 {
-                    margin-left: 30px;
-                    margin-top: 4px;
-                }
-
-            .body-container {
-                position: absolute;
-                right: 0;
-                top: var(--info-container-height);
-                height: auto;
-                left: 0;
-                background-color: var(--body-container-color);
+            .info-container ul {
+                list-style: none;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                margin: 8px;
+                padding: 0;
             }
-
-                .body-container h1, 
-                .body-container h2 {
-                    margin-left: 30px;
-                }
-
-                .body-container h1 {
-                    text-decoration: underline;
-                }
 
             .avatar-container {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: var(--info-container-width);
-                width: var(--info-container-width);
+                display:none;
             }
 
             .avatar {
-                --a: calc(var(--avatar-border-width) * 3);
-
                 border-radius: 50%;
                 height: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
                 width: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
                 border: var(--avatar-border-width) solid white;
             }
 
+            .title {
+                padding: var(--margin-small);
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                background-color: unset;
+            }
+
+            .title h1 {
+                justify-self: left;
+                line-height: 100%;
+            }
+
+            .title span {
+                justify-self: right;
+            }
+
             .info {
                 display: flex;
                 justify-content: left;
                 align-items: center;
-                margin-left: 30px;
-                margin-right: 30px;
-                margin-bottom: 20px;
+                margin: var(--margin-small);
             }
 
             .info .svg {
-                width: 30px;
-                margin-right: 30px;
+                width: var(--font-size);
+                margin-right: 8px;
             }
 
+            .body-container {
+                background-color: var(--body-container-color);
+            }
+
+                .body-container h2 {
+                    margin-left: var(--margin-large);
+                }
+
             .about {
-                margin-left: 30px;
-                margin-right: 30px;
+                margin: var(--margin-large);
             }
 
             .info-detail {
@@ -120,6 +113,7 @@
             .experience {
                 break-inside: avoid;
                 max-width: var(--body-container-width);
+                margin: var(--margin-large);
             }
 
             .experience .job-title, 
@@ -129,8 +123,6 @@
             .experience .responsibilities,
             .experience .technologies {
                 display: block;
-                margin-left: 30px;
-                margin-bottom: 4px;
             }
 
             .experience .job-title {
@@ -173,8 +165,9 @@
                 max-width: var(--body-container-width);
             }
 
-            .skills  ul {
-                margin-left: 30px;
+            .skills h3,
+            .skills ul {
+                margin-left: var(--margin-large);
             }
 
             .skills .svg {
@@ -193,7 +186,65 @@
                     top: 0;
                     height: 100%;
                     width: var(--info-container-width);
+                    background-color: var(--info-container-color);
                 }
+
+                    .info-container h1, 
+                    .info-container h3,
+                    .info-container h3 {
+                        display: block;
+                        margin-top: 4px;
+                    }
+
+                    .info-container ul {
+                        display: contents;
+                        grid-template-columns: none;
+                    }
+
+                .avatar-container {
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: var(--info-container-width);
+                    width: var(--info-container-width);
+                }
+
+                .title {
+                    margin-left: var(--margin-large);
+                    margin-right: unset;
+                    margin-top: 0;
+                    display: block;
+                    justify-content: unset;
+                    align-items: unset;
+                }
+
+                .title h1 {
+                    justify-self: unset;
+                    line-height: unset;
+                }
+
+                .title span {
+                    justify-self: unset;
+                }
+
+                .info {
+                    margin:var(--margin-large);
+                }
+
+                .info .svg {
+                    width: 24px;
+                    margin-right: 16px;
+                }
+
+                .about {
+                    margin: var(--margin-large);
+                }
+
+                    .about h3 {
+                        display: block;
+                    }
 
                 .body-container {
                     position: absolute;
@@ -206,14 +257,6 @@
                 }
             }
             
-
-            @media print {
-                .body-container {
-                    overflow-x: visible;
-                    overflow-y: visible;
-                }
-            }
-
         </style>
 
     </head>
@@ -226,47 +269,56 @@
                 <img class="avatar" src="img/me.jpg" alt="Avatar">
             </div>
 
-            <h1>Adam Gartee</h1>
-            <h2>Software Developer</h2>
-
-            <div class="info">
-                <object class="svg" type="image/svg+xml" data="svg/home.svg"></object>
-                <div class="info-detail">
-                    Davison, MI USA
-                </div>
+            <div class="title">
+                <h1>Adam Gartee</h1>
+                <span><strong>Software Developer</strong></span>
             </div>
 
-            <div class="info">
-                <object class="svg" type="image/svg+xml" data="svg/github.svg"></object>
-                <div class="info-detail">
-                    <a href="https://github.com/agartee">https://github.com/agartee</a>
-                </div>
-            </div>
+            <ul>
+                <li>
+                    <div class="info">
+                    <object class="svg" type="image/svg+xml" data="svg/home.svg"></object>
+                    <div class="info-detail">
+                        Davison, MI USA
+                    </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <object class="svg" type="image/svg+xml" data="svg/github.svg"></object>
+                        <div class="info-detail">
+                            <a href="https://github.com/agartee">https://github.com/agartee</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <object class="svg" type="image/svg+xml" data="svg/email.svg"></object>
+                        <div class="info-detail">
+                            agartee@gmail.com
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <object class="svg" type="image/svg+xml" data="svg/twitter.svg"></object>
+                        <div class="info-detail">
+                            @adamgartee
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="info">
+                        <object class="svg" type="image/svg+xml" data="svg/linkedin.svg"></object>
+                        <div class="info-detail">
+                            <a href="https://www.linkedin.com/in/adamgartee">https://www.linkedin.com/in/adamgartee</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
 
-            <div class="info">
-                <object class="svg" type="image/svg+xml" data="svg/email.svg"></object>
-                <div class="info-detail">
-                    agartee@gmail.com
-                </div>
-            </div>
-
-            <div class="info">
-                <object class="svg" type="image/svg+xml" data="svg/linkedin.svg"></object>
-                <div class="info-detail">
-                    <a href="https://www.linkedin.com/in/adamgartee">https://www.linkedin.com/in/adamgartee</a>
-                </div>
-            </div>
-
-            <div class="info">
-                <object class="svg" type="image/svg+xml" data="svg/twitter.svg"></object>
-                <div class="info-detail">
-                    @adamgartee
-                </div>
-            </div>
-
-            <h3>About</h3>
-           
             <div class="about">
+                <h2>About</h2>
                 <p>
                     A career developer with over 20 years of experience in a number of technologies and code languages. Engages with employers and clients as a full-stack developer, system architect, coach, and mentor.
                 </p> 
@@ -276,10 +328,10 @@
 
         <div class="body-container">
 
-            <h1>Experience</h1>
+            <h2>Experience</h2>
 
             <div class="experience">
-                <h2 class="job-title">Consultant / Software Developer</h2>
+                <h3 class="job-title">Consultant / Software Developer</h3>
                 <span class="company">Leading Agile</span>
                 <span class="date-range">January 2022 - Present</span>
                 <span class="responsibilities">
@@ -297,7 +349,7 @@
                         <li>JavaScript</li>
                         <li>Microservices</li>
                         <li>Node.js</li>
-                        <li>OAuth2/OpenID Connect</li>
+                        <li>OAuth3/OpenID Connect</li>
                         <li>Python</li>
                         <li>SQL Server</li>
                         <li>TypeScript</li>
@@ -306,7 +358,7 @@
             </div>
 
             <div class="experience">
-                <h2 class="job-title">Partner / Co-Founder / Software Developer</h2>
+                <h3 class="job-title">Partner / Co-Founder / Software Developer</h3>
                 <span class="company">Hurley + Collective</span>
                 <span class="date-range">April 2018 - Present</span>
                 <span class="location">Davison, MI</span>
@@ -323,7 +375,7 @@
                         <li>Entity Framework</li>
                         <li>JavaScript</li>
                         <li>Microservices</li>
-                        <li>OAuth2/OpenID Connect</li>
+                        <li>OAuth3/OpenID Connect</li>
                         <li>Python</li>
                         <li>SQL Server</li>
                         <li>TypeScript</li>
@@ -332,7 +384,7 @@
             </div>
 
             <div class="experience">
-                <h2 class="job-title">Software Developer / Coach</h2>
+                <h3 class="job-title">Software Developer / Coach</h3>
                 <span class="company">Pillar Technology</span>
                 <span class="date-range">Sept 2013 - April 2018 (4 yrs 8 mos)</span>
                 <span class="location">Ann Arbor, MI</span>
@@ -350,7 +402,7 @@
                         <li>Java</li>
                         <li>JavaScript</li>
                         <li>Microservices</li>
-                        <li>OAuth2/OpenID Connect</li>
+                        <li>OAuth3/OpenID Connect</li>
                         <li>Python</li>
                         <li>SQL Server</li>
                         <li>TypeScript</li>
@@ -360,7 +412,7 @@
             </div>
 
             <div class="experience">
-                <h2 class="job-title">Software Developer</h2>
+                <h3 class="job-title">Software Developer</h3>
                 <span class="company">Thomson Reuters</span>
                 <span class="date-range">Mar 2012 - Sept 2013 (1 yrs 7 mos)</span>
                 <span class="location">Bingham Farms, MI</span>
@@ -382,7 +434,7 @@
             </div>
 
             <div class="experience">
-                <h2 class="job-title">Software Developer</h2>
+                <h3 class="job-title">Software Developer</h3>
                 <span class="company">Diplomat Specialty Pharmacy</span>
                 <span class="date-range">Jun 2011 - Feb 2012 (9 mos)</span>
                 <span class="location">Flint, MI</span>
@@ -401,7 +453,7 @@
             </div>
 
             <div class="experience">
-                <h2 class="job-title">Software Developer</h2>
+                <h3 class="job-title">Software Developer</h3>
                 <span class="company">Bay-Arenac Behavioral Health</span>
                 <span class="date-range">Jun 2007 - Jun 2011 (4 yrs 1 mo)</span>
                 <span class="location">Flint, MI</span>
@@ -423,7 +475,7 @@
             </div>
 
             <div class="experience">
-                <h2 class="job-title">Software Developer</h2>
+                <h3 class="job-title">Software Developer</h3>
                 <span class="company">NBI Solutions</span>
                 <span class="date-range">May 2003 - Oct 2005 (2 yrs 6 mo)</span>
                 <span class="location">Troy, MI</span>
@@ -441,10 +493,10 @@
                 </span>
             </div>
 
-            <h1>Skills</h1>
+            <h2>Skills</h2>
 
             <div class="skills">
-                <h2>
+                <h3>
                     Expert (
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
@@ -452,7 +504,7 @@
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
                     )
-                </h2>
+                </h3>
                 <ul>
                     <li><a href="https://docs.microsoft.com/en-us/aspnet/core/">ASP.NET/ASP.NET Core</a></li>
                     <li>C#</li>
@@ -462,7 +514,7 @@
             </div>
 
             <div class="skills">
-                <h2>
+                <h3>
                     Advanced (
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
@@ -470,12 +522,12 @@
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
                     <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
                     )
-                </h2>
+                </h3>
                 <ul>
                     <li>.NET Framework</li>
                     <li>Agile Methodologies</li>
                     <li><a href="https://www.appveyor.com/">AppVeyor (CI/CD provider)</a></li>
-                    <li><a href="https://auth0.com/">Auth0 (OAuth2/OpenID Connect provider)</a></li>
+                    <li><a href="https://auth0.com/">Auth0 (OAuth3/OpenID Connect provider)</a></li>
                     <li>Azure Service Bus</li>
                     <li><a href="https://www.docker.com/">Docker</a></li>
                     <li>Domain Driven Design (DDD)</li>
@@ -491,7 +543,7 @@
             </div>
 
             <div class="skills">
-                <h2>
+                <h3>
                     Familiar (
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
                     <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
@@ -499,7 +551,7 @@
                     <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
                     <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
                     )
-                </h2>
+                </h3>
                 <ul>
                     <li>Active Directory</li>
                     <li><a href="https://angular.io/">Angular</a></li>
@@ -510,7 +562,7 @@
                     <li><a href="https://www.jenkins.io/">Jenkins (CI/CD provider)</a></li>
                     <li><a href="https://kafka.apache.org/">Kafka</a></li>
                     <li>MySQL</li>
-                    <li>OAuth2/OpenID Connect</li>
+                    <li>OAuth3/OpenID Connect</li>
                     <li>Oracle</li>
                     <li><a href="https://reactjs.org/">React</a></li>
                     <li>SQL Server Reporting Services (SSRS)</li>
