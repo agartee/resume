@@ -7,6 +7,7 @@
                 --font-size: 16px;
                 --printed-font-size: 12px;
                 --font-family: Calibri;
+                --info-container-height: 200px;
                 --info-container-width: 320px;
                 --info-container-color: gainsboro;
                 --body-container-width: 800px;
@@ -31,8 +32,8 @@
                 position: absolute;
                 left: 0;
                 top: 0;
-                height: 100%;
-                width: var(--info-container-width);
+                height: var(--info-container-height);
+                width: 100%;
                 background-color: var(--info-container-color);
             }
 
@@ -46,12 +47,10 @@
             .body-container {
                 position: absolute;
                 right: 0;
-                top: 0;
-                height: 100%;
-                left: var(--info-container-width);
+                top: var(--info-container-height);
+                height: auto;
+                left: 0;
                 background-color: var(--body-container-color);
-                overflow-y: scroll;
-                overflow-x:hidden;
             }
 
                 .body-container h1, 
@@ -186,6 +185,27 @@
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            @media only screen and (min-width: 813px) {
+                .info-container {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    width: var(--info-container-width);
+                }
+
+                .body-container {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 100%;
+                    left: var(--info-container-width);
+                    overflow-y: scroll;
+                    overflow-x:hidden;
+                }
+            }
+            
 
             @media print {
                 .body-container {
