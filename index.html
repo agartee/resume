@@ -152,6 +152,24 @@
                 margin-top: 20px;
             }
 
+            .experience .technologies ul {
+                display: inline;
+                list-style: none;
+                padding-left:0;
+            }
+
+            .experience .technologies li {
+                display: inline;
+            }
+
+            .experience .technologies li:after {
+                content: ", ";
+            }
+
+            .experience .technologies li:last-child::after {
+                content: "";
+            }
+
             .skills {
                 max-width: var(--body-container-width);
             }
@@ -247,7 +265,24 @@
                 <span class="responsibilities">
                     Consultant, coach and software developer. Embedding with software development teams to elevate clean coding and testing practices, as well as instill a focus on business value/outcomes.
                 </span>
-                <span class="technologies">Tech: Python, Java, TypeScript, JavaScript, Docker, Microservices, Azure, OAuth2/OpenID Connect</span>
+                <span class="technologies">
+                    Tech:
+                    <ul>
+                        <li>.NET Framework</li>
+                        <li>Angular</li>
+                        <li>ASP.NET Core</li>
+                        <li>Azure</li>
+                        <li>Docker</li>
+                        <li>Entity Framework</li>
+                        <li>JavaScript</li>
+                        <li>Microservices</li>
+                        <li>Node.js</li>
+                        <li>OAuth2/OpenID Connect</li>
+                        <li>Python</li>
+                        <li>SQL Server</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </span>
             </div>
 
             <div class="experience">
@@ -258,7 +293,22 @@
                 <span class="responsibilities">
                     Consultant, systems architect and lead developer for our small company. Focused on building robust and maintainable systems for clients and supporting those systems long-term.
                 </span>
-                <span class="technologies">Tech: .NET Framework, .NET Core, ASP.NET Core, Angular, Entity Framework, SQL Server, Azure, OAuth2/OpenID Connect</span>
+                <span class="technologies">
+                    Tech:
+                    <ul>
+                        <li>.NET Framework</li>
+                        <li>ASP.NET Core</li>
+                        <li>Azure</li>
+                        <li>Docker</li>
+                        <li>Entity Framework</li>
+                        <li>JavaScript</li>
+                        <li>Microservices</li>
+                        <li>OAuth2/OpenID Connect</li>
+                        <li>Python</li>
+                        <li>SQL Server</li>
+                        <li>TypeScript</li>
+                    </ul>
+                </span>
             </div>
 
             <div class="experience">
@@ -269,7 +319,24 @@
                 <span class="responsibilities">
                     Designed and developed software in a variety of team sizes and Agile methodologies for our clients. Assisted sales team with technical guidance. Embedded within client teams serving as TDD (test driven development) coach.
                 </span>
-                <span class="technologies">Tech: Java, .NET Framework, .NET Core, ASP.NET, ASP.NET Core, WPF, Entity Framework, SQL Server, Azure, OAuth2/OpenID Connect</span>
+                <span class="technologies">
+                    Tech:
+                    <ul>
+                        <li>.NET Framework</li>
+                        <li>ASP.NET Core</li>
+                        <li>Azure</li>
+                        <li>Azure Service Fabric</li>
+                        <li>Entity Framework</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>Microservices</li>
+                        <li>OAuth2/OpenID Connect</li>
+                        <li>Python</li>
+                        <li>SQL Server</li>
+                        <li>TypeScript</li>
+                        <li>WPF</li>
+                    </ul>
+                </span>
             </div>
 
             <div class="experience">
@@ -280,7 +347,18 @@
                 <span class="responsibilities">
                     Developed software within a large product team with multiple sub-teams using Agile/Scrum methodologies. Designed and developed configuration-driven authorization module for said product. Acted as coach for junior and mid-level developers.
                 </span>
-                <span class="technologies">Tech: .NET Framework, WPF, Silverlight, WCF, ASP.NET, SQL Server</span>
+                <span class="technologies">
+                    Tech:
+                    <ul>
+                        <li>.NET Framework</li>
+                        <li>ASP.NET</li>
+                        <li>Entity Framework</li>
+                        <li>Silverlight</li>
+                        <li>SQL Server</li>
+                        <li>WCF</li>
+                        <li>WPF</li>
+                    </ul>
+                </span>
             </div>
 
             <div class="experience">
@@ -291,7 +369,15 @@
                 <span class="responsibilities">
                     Developed software using Agile/Scrum methodologies for a legacy ASP (classic) application upgrade to ASP.NET.
                 </span>
-                <span class="technologies">Tech: .NET Framework, ASP.NET, Entity Framework, SQL Server</span>
+                <span class="technologies">
+                    Tech:
+                    <ul>
+                        <li>.NET Framework</li>
+                        <li>ASP.NET</li>
+                        <li>Entity Framework</li>
+                        <li>SQL Server</li>
+                    </ul>
+                </span>
             </div>
 
             <div class="experience">
@@ -302,7 +388,18 @@
                 <span class="responsibilities">
                     Designed, developed and maintained an internal Medicaid eligibility lookup desktop application. Worked on multiple teams building internal web applications and reports.
                 </span>
-                <span class="technologies">Tech: .NET Framework, WPF, WCF, ASP.NET, Entity Framework, SQL Server, BizTalk</span>
+                <span class="technologies">
+                    Tech:
+                    <ul>
+                        <li>.NET Framework</li>
+                        <li>ASP.NET</li>
+                        <li>BizTalk</li>
+                        <li>Entity Framework</li>
+                        <li>SQL Server</li>
+                        <li>WCF</li>
+                        <li>WPF</li>
+                    </ul>
+                </span>
             </div>
 
             <div class="experience">
@@ -313,7 +410,15 @@
                 <span class="responsibilities">
                     Developed software used to estimate and configure networking/server cabinets and other network-related equipment for deployment within General Motors facilities.
                 </span>
-                <span class="technologies">Tech: .NET Framework, ASP.NET, SQL Server, VBA</span>
+                <span class="technologies">
+                    Tech:
+                    <ul>
+                        <li>.NET Framework</li>
+                        <li>ASP.NET</li>
+                        <li>SQL Server</li>
+                        <li>VBA</li>
+                    </ul>
+                </span>
             </div>
 
             <h1>Skills</h1>
@@ -356,8 +461,11 @@
                     <li>Domain Driven Design (DDD)</li>
                     <li><a href="https://github.com/">Git/GitHub</a></li>
                     <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                    <li><a href="https://github.com/jbogard/MediatR/">MediatR</a></li>
                     <li>Microservices Architecture</li>
                     <li><a href="https://www.microsoft.com/en-us/sql-server/">Microsoft SQL Server</a></li>
+                    <li><a href="https://nodejs.org/">Node.js</a></li>
                     <li>Python</li>
                 </ul>
             </div>
@@ -379,12 +487,9 @@
                     <li><a href="https://azure.microsoft.com/en-us/services/service-fabric/">Azure Service Fabric</a></li>
                     <li><a href="https://identityserver4.readthedocs.io/">Identity Server</a></li>
                     <li><a href="https://www.java.com">Java</a></li>
-                    <li><a href="https://www.java.com">JavaScript</a></li>
                     <li><a href="https://www.jenkins.io/">Jenkins (CI/CD provider)</a></li>
                     <li><a href="https://kafka.apache.org/">Kafka</a></li>
-                    <li><a href="https://github.com/jbogard/MediatR/">MediatR</a></li>
                     <li>MySQL</li>
-                    <li><a href="https://nodejs.org/">Node.js</a></li>
                     <li>OAuth2/OpenID Connect</li>
                     <li>Oracle</li>
                     <li><a href="https://reactjs.org/">React</a></li>
