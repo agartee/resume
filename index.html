@@ -9,11 +9,11 @@
                 --margin-large: 30px;
                 --margin-small: 8px;
                 --font-family: Calibri;
-                --info-container-height: 200px;
-                --info-container-width: 320px;
-                --info-container-color: #8ab5e3;
-                --body-container-width: 800px;
-                --body-container-color: white;
+                --primary-color: white;
+                --secondary-color: #8ab5e3;
+                --tertiary-color: gainsboro;
+                --info-width: 320px;
+                --body-width: 800px;
                 --avatar-border-width: 25px;
                 --avatar-padding: 40px;
             }
@@ -57,7 +57,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
-                background-color: unset;
+                background-color: var(--secondary-color);
             }
 
             .title h1 {
@@ -67,6 +67,11 @@
 
             .title span {
                 justify-self: right;
+                align-self: center;
+            }
+
+            .infos {
+                background-color: var(--tertiary-color);
             }
 
             .info {
@@ -82,7 +87,7 @@
             }
 
             .body-container {
-                background-color: var(--body-container-color);
+                background-color: var(--primary-color);
             }
 
                 .body-container h2 {
@@ -112,7 +117,7 @@
 
             .experience {
                 break-inside: avoid;
-                max-width: var(--body-container-width);
+                max-width: var(--body-width);
                 margin: var(--margin-large);
             }
 
@@ -162,7 +167,7 @@
             }
 
             .skills {
-                max-width: var(--body-container-width);
+                max-width: var(--body-width);
             }
 
             .skills h3,
@@ -185,8 +190,8 @@
                     left: 0;
                     top: 0;
                     height: 100%;
-                    width: var(--info-container-width);
-                    background-color: var(--info-container-color);
+                    width: var(--info-width);
+                    background-color: var(--secondary-color);
                 }
 
                     .info-container h1, 
@@ -207,13 +212,12 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: var(--info-container-width);
-                    width: var(--info-container-width);
+                    height: var(--info-width);
+                    width: var(--info-width);
                 }
 
                 .title {
-                    margin-left: var(--margin-large);
-                    margin-right: unset;
+                    padding-left: var(--margin-large);
                     margin-top: 0;
                     display: block;
                     justify-content: unset;
@@ -227,6 +231,10 @@
 
                 .title span {
                     justify-self: unset;
+                }
+
+                .infos {
+                    background-color: unset;
                 }
 
                 .info {
@@ -251,7 +259,7 @@
                     right: 0;
                     top: 0;
                     height: 100%;
-                    left: var(--info-container-width);
+                    left: var(--info-width);
                     overflow-y: scroll;
                     overflow-x:hidden;
                 }
@@ -274,48 +282,50 @@
                 <span><strong>Software Developer</strong></span>
             </div>
 
-            <ul>
-                <li>
-                    <div class="info">
-                    <object class="svg" type="image/svg+xml" data="svg/home.svg"></object>
-                    <div class="info-detail">
-                        Davison, MI USA
-                    </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <object class="svg" type="image/svg+xml" data="svg/github.svg"></object>
+            <div class="infos">
+                <ul>
+                    <li>
+                        <div class="info">
+                        <object class="svg" type="image/svg+xml" data="svg/home.svg"></object>
                         <div class="info-detail">
-                            <a href="https://github.com/agartee">https://github.com/agartee</a>
+                            Davison, MI USA
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <object class="svg" type="image/svg+xml" data="svg/email.svg"></object>
-                        <div class="info-detail">
-                            agartee@gmail.com
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <object class="svg" type="image/svg+xml" data="svg/twitter.svg"></object>
-                        <div class="info-detail">
-                            @adamgartee
+                    </li>
+                    <li>
+                        <div class="info">
+                            <object class="svg" type="image/svg+xml" data="svg/github.svg"></object>
+                            <div class="info-detail">
+                                <a href="https://github.com/agartee">https://github.com/agartee</a>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="info">
-                        <object class="svg" type="image/svg+xml" data="svg/linkedin.svg"></object>
-                        <div class="info-detail">
-                            <a href="https://www.linkedin.com/in/adamgartee">https://www.linkedin.com/in/adamgartee</a>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <object class="svg" type="image/svg+xml" data="svg/email.svg"></object>
+                            <div class="info-detail">
+                                agartee@gmail.com
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <object class="svg" type="image/svg+xml" data="svg/twitter.svg"></object>
+                            <div class="info-detail">
+                                @adamgartee
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="info">
+                            <object class="svg" type="image/svg+xml" data="svg/linkedin.svg"></object>
+                            <div class="info-detail">
+                                <a href="https://www.linkedin.com/in/adamgartee">https://www.linkedin.com/in/adamgartee</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
             <div class="about">
                 <h2>About</h2>
@@ -338,7 +348,7 @@
                     Consultant, coach and software developer. Embedding with software development teams to elevate clean coding and testing practices, as well as instill a focus on business value/outcomes.
                 </span>
                 <span class="technologies">
-                    Tech:
+                    <strong>Tech:</strong>
                     <ul>
                         <li>.NET Framework</li>
                         <li>Angular</li>
@@ -366,7 +376,7 @@
                     Consultant, systems architect and lead developer for our small company. Focused on building robust and maintainable systems for clients and supporting those systems long-term.
                 </span>
                 <span class="technologies">
-                    Tech:
+                    <strong>Tech:</strong>
                     <ul>
                         <li>.NET Framework</li>
                         <li>ASP.NET Core</li>
@@ -392,7 +402,7 @@
                     Designed and developed software in a variety of team sizes and Agile methodologies for our clients. Assisted sales team with technical guidance. Embedded within client teams serving as TDD (test driven development) coach.
                 </span>
                 <span class="technologies">
-                    Tech:
+                    <strong>Tech:</strong>
                     <ul>
                         <li>.NET Framework</li>
                         <li>ASP.NET Core</li>
@@ -420,7 +430,7 @@
                     Developed software within a large product team with multiple sub-teams using Agile/Scrum methodologies. Designed and developed configuration-driven authorization module for said product. Acted as coach for junior and mid-level developers.
                 </span>
                 <span class="technologies">
-                    Tech:
+                    <strong>Tech:</strong>
                     <ul>
                         <li>.NET Framework</li>
                         <li>ASP.NET</li>
@@ -442,7 +452,7 @@
                     Developed software using Agile/Scrum methodologies for a legacy ASP (classic) application upgrade to ASP.NET.
                 </span>
                 <span class="technologies">
-                    Tech:
+                    <strong>Tech:</strong>
                     <ul>
                         <li>.NET Framework</li>
                         <li>ASP.NET</li>
@@ -461,7 +471,7 @@
                     Designed, developed and maintained an internal Medicaid eligibility lookup desktop application. Worked on multiple teams building internal web applications and reports.
                 </span>
                 <span class="technologies">
-                    Tech:
+                    <strong>Tech:</strong>
                     <ul>
                         <li>.NET Framework</li>
                         <li>ASP.NET</li>
@@ -483,7 +493,7 @@
                     Developed software used to estimate and configure networking/server cabinets and other network-related equipment for deployment within General Motors facilities.
                 </span>
                 <span class="technologies">
-                    Tech:
+                    <strong>Tech:</strong>
                     <ul>
                         <li>.NET Framework</li>
                         <li>ASP.NET</li>
