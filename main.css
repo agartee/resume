@@ -1,0 +1,119 @@
+:root {
+    --font-family: Calibri;
+    --font-size: 16px;
+    --primary-color: white;
+    --secondary-color: #8ab5e3;
+    --tertiary-color: gainsboro;
+    --text-color: black;
+    --avatar-border-width: 25px;
+    --avatar-padding: 40px;
+    --avatar-border-color: white;
+    --margin-small: 8px;
+    --margin-large: 24px;
+}
+
+body {
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    margin: 0;
+    padding: 0;
+}
+
+.avatar {
+    height: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
+    width: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
+    border: var(--avatar-border-width) solid var(--avatar-border-color);
+    border-radius: 50%;
+}
+
+.title-section {
+    background-color: var(--secondary-color);
+}
+
+.personal-info-container ul {
+    margin: 0;
+    padding: 0;
+}
+
+.personal-links-section li {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.personal-links-section .svg {
+    margin-right: var(--margin-small);
+}
+
+.personal-links-section li div {
+    /* allow urls to wrap */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.personal-links-section a, .about-section a, .skills a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.scroll-container section {
+    margin-left: var(--margin-large);
+    margin-right: var(--margin-large);
+}
+
+.experience-title, 
+.experience-company, 
+.experience-date-range, 
+.experience-location, 
+.experience-responsibilities,
+.experience-technologies {
+    display: block;
+}
+
+.experience-company {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.experience-date-range, 
+.experience-location {
+    font-size: 1.1rem;
+}
+
+.experience-technologies {
+    margin-top: 20px;
+}
+
+.experience-technologies ul {
+    display: inline;
+    list-style: none;
+    padding-left:0;
+}
+
+.experience-technologies li {
+    display: inline;
+}
+
+.experience-technologies li:after {
+    content: ", ";
+}
+
+.experience-technologies li:last-child::after {
+    content: "";
+}
+
+.skills .svg {
+    height: 1rem;
+}
+
+.skills ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}

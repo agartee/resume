@@ -1,0 +1,9 @@
+@media print {
+    .avatar-container {
+        display:none;
+    }
+    
+    .experience {
+        break-inside: avoid;
+    }
+}

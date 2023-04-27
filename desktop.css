@@ -1,0 +1,57 @@
+@media only screen and (min-width: 813px) {
+    :root {
+        --info-width: 320px;
+        --body-width: 800px;
+    }
+
+    .personal-info-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: var(--info-width);
+        background-color: var(--secondary-color);
+    }
+
+        .personal-info-container ul {
+            display: contents;
+            grid-template-columns: none;
+        }
+
+    .avatar-container {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: var(--info-width);
+        width: var(--info-width);
+    }
+
+    .title-section,
+    .personal-links-section li, .about-section {
+        margin: var(--margin-large);
+    }
+
+    .personal-links-section .svg {
+        width: 24px;
+    }
+
+    .about-section h3 {
+        display: block;
+    }
+
+    .scroll-container {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        left: var(--info-width);
+        overflow-y: scroll;
+        overflow-x:hidden;
+    }
+
+        .scroll-container section {
+            max-width: var(--body-width);
+        }
+}

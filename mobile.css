@@ -1,0 +1,39 @@
+@media only screen and (max-width: 812px) {
+    .personal-info-container ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .avatar-container {
+        display:none;
+    }
+
+    .title-section {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--margin-small);
+    }
+
+    .title-section span {
+        justify-self: right;
+        align-self: center;
+    }
+
+    .personal-links-section ul,
+    .about-section {
+        margin-left: var(--margin-large);
+    }
+
+    .personal-links-section {
+        background-color: var(--tertiary-color);
+    }
+        .personal-links-section .svg {
+            width: 16px;
+        }
+
+    .skills li {
+        /* prevent overlap of text with next-column bullets */
+        margin-right: 1.2rem;
+    }
+}

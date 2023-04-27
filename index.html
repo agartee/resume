@@ -1,586 +1,319 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <style>
-            :root {
-                --font-size: 16px;
-                --printed-font-size: 12px;
-                --margin-large: 30px;
-                --margin-small: 8px;
-                --font-family: Calibri;
-                --primary-color: white;
-                --secondary-color: #8ab5e3;
-                --tertiary-color: gainsboro;
-                --info-width: 320px;
-                --body-width: 800px;
-                --avatar-border-width: 25px;
-                --avatar-padding: 40px;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                color: var(--text-color);
-                font-family: var(--font-family);
-                font-size: var(--font-size);
-            }
-
-            .info-container h1, 
-            .info-container h2,
-            .info-container h3 {
-                display: inline;
-                margin: 0;
-            }
-
-            .info-container ul {
-                list-style: none;
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                margin: 8px;
-                padding: 0;
-            }
-
-            .avatar-container {
-                display:none;
-            }
-
-            .avatar {
-                border-radius: 50%;
-                height: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
-                width: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
-                border: var(--avatar-border-width) solid white;
-            }
-
-            .title {
-                padding: var(--margin-small);
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                background-color: var(--secondary-color);
-            }
-
-            .title h1 {
-                justify-self: left;
-                line-height: 100%;
-            }
-
-            .title span {
-                justify-self: right;
-                align-self: center;
-            }
-
-            .infos {
-                background-color: var(--tertiary-color);
-            }
-
-            .info {
-                display: flex;
-                justify-content: left;
-                align-items: center;
-                margin: var(--margin-small);
-            }
-
-            .info .svg {
-                width: var(--font-size);
-                margin-right: 8px;
-            }
-
-            .body-container {
-                background-color: var(--primary-color);
-            }
-
-                .body-container h2 {
-                    margin-left: var(--margin-large);
-                }
-
-            .about {
-                margin: var(--margin-large);
-            }
-
-            .info-detail {
-                /* allow urls to wrap */
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-                -ms-word-break: break-all;
-                word-break: break-word;
-                -ms-hyphens: auto;
-                -moz-hyphens: auto;
-                -webkit-hyphens: auto;
-                hyphens: auto;
-            }
-
-            .info-detail a, .about a, .skills a {
-                color: black;
-                text-decoration: none;
-            }
-
-            .experience {
-                break-inside: avoid;
-                max-width: var(--body-width);
-                margin: var(--margin-large);
-            }
-
-            .experience .job-title, 
-            .experience .company, 
-            .experience .date-range, 
-            .experience .location, 
-            .experience .responsibilities,
-            .experience .technologies {
-                display: block;
-            }
-
-            .experience .job-title {
-                margin-top: 20px;
-            }
-
-            .experience .company {
-                font-size: 1.2rem;
-                font-style: italic;
-            }
-
-            .experience .date-range, 
-            .experience .location {
-                font-size: 1.1rem;
-            }
-
-            .experience .technologies {
-                margin-top: 20px;
-            }
-
-            .experience .technologies ul {
-                display: inline;
-                list-style: none;
-                padding-left:0;
-            }
-
-            .experience .technologies li {
-                display: inline;
-            }
-
-            .experience .technologies li:after {
-                content: ", ";
-            }
-
-            .experience .technologies li:last-child::after {
-                content: "";
-            }
-
-            .skills {
-                max-width: var(--body-width);
-            }
-
-            .skills h3,
-            .skills ul {
-                margin-left: var(--margin-large);
-            }
-
-            .skills .svg {
-                height: 1rem;
-            }
-
-            .skills ul {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            @media only screen and (min-width: 813px) {
-                .info-container {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    height: 100%;
-                    width: var(--info-width);
-                    background-color: var(--secondary-color);
-                }
-
-                    .info-container h1, 
-                    .info-container h3,
-                    .info-container h3 {
-                        display: block;
-                        margin-top: 4px;
-                    }
-
-                    .info-container ul {
-                        display: contents;
-                        grid-template-columns: none;
-                    }
-
-                .avatar-container {
-                    margin: 0;
-                    padding: 0;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    height: var(--info-width);
-                    width: var(--info-width);
-                }
-
-                .title {
-                    padding-left: var(--margin-large);
-                    margin-top: 0;
-                    display: block;
-                    justify-content: unset;
-                    align-items: unset;
-                }
-
-                .title h1 {
-                    justify-self: unset;
-                    line-height: unset;
-                }
-
-                .title span {
-                    justify-self: unset;
-                }
-
-                .infos {
-                    background-color: unset;
-                }
-
-                .info {
-                    margin:var(--margin-large);
-                }
-
-                .info .svg {
-                    width: 24px;
-                    margin-right: 16px;
-                }
-
-                .about {
-                    margin: var(--margin-large);
-                }
-
-                    .about h3 {
-                        display: block;
-                    }
-
-                .body-container {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    height: 100%;
-                    left: var(--info-width);
-                    overflow-y: scroll;
-                    overflow-x:hidden;
-                }
-            }
-            
-        </style>
-
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="mobile.css">
+        <link rel="stylesheet" href="desktop.css">
     </head>
 
     <body>
 
-        <div class="info-container">
+        <div class="personal-info-container">
 
             <div class="avatar-container">
                 <img class="avatar" src="img/me.jpg" alt="Avatar">
             </div>
 
-            <div class="title">
+            <section class="title-section">
                 <h1>Adam Gartee</h1>
                 <span><strong>Software Developer</strong></span>
-            </div>
+            </section>
 
-            <div class="infos">
+            <section class="personal-links-section">
                 <ul>
                     <li>
-                        <div class="info">
                         <object class="svg" type="image/svg+xml" data="svg/home.svg"></object>
-                        <div class="info-detail">
+                        <div>
                             Davison, MI USA
                         </div>
+                    </li>
+                    <li>
+                        <object class="svg" type="image/svg+xml" data="svg/github.svg"></object>
+                        <div>
+                            <a href="https://github.com/agartee">https://github.com/agartee</a>
                         </div>
                     </li>
                     <li>
-                        <div class="info">
-                            <object class="svg" type="image/svg+xml" data="svg/github.svg"></object>
-                            <div class="info-detail">
-                                <a href="https://github.com/agartee">https://github.com/agartee</a>
-                            </div>
+                        <object class="svg" type="image/svg+xml" data="svg/email.svg"></object>
+                        <div>
+                            agartee@gmail.com
                         </div>
                     </li>
                     <li>
-                        <div class="info">
-                            <object class="svg" type="image/svg+xml" data="svg/email.svg"></object>
-                            <div class="info-detail">
-                                agartee@gmail.com
-                            </div>
+                        <object class="svg" type="image/svg+xml" data="svg/twitter.svg"></object>
+                        <div>
+                            @adamgartee
                         </div>
                     </li>
                     <li>
-                        <div class="info">
-                            <object class="svg" type="image/svg+xml" data="svg/twitter.svg"></object>
-                            <div class="info-detail">
-                                @adamgartee
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="info">
-                            <object class="svg" type="image/svg+xml" data="svg/linkedin.svg"></object>
-                            <div class="info-detail">
-                                <a href="https://www.linkedin.com/in/adamgartee">https://www.linkedin.com/in/adamgartee</a>
-                            </div>
+                        <object class="svg" type="image/svg+xml" data="svg/linkedin.svg"></object>
+                        <div>
+                            <a href="https://www.linkedin.com/in/adamgartee">https://www.linkedin.com/in/adamgartee</a>
                         </div>
                     </li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="about">
+            <section class="about-section">
                 <h2>About</h2>
                 <p>
                     A career developer with over 20 years of experience in a number of technologies and code languages. Engages with employers and clients as a full-stack developer, system architect, coach, and mentor.
                 </p> 
-            </div>
+            </section>
             
         </div>
 
-        <div class="body-container">
+        <div class="scroll-container">
 
-            <h2>Experience</h2>
+            <section class="experience-section">
+                <h2>Experience</h2>
 
-            <div class="experience">
-                <h3 class="job-title">Consultant / Software Developer</h3>
-                <span class="company">Leading Agile</span>
-                <span class="date-range">January 2022 - Present</span>
-                <span class="responsibilities">
-                    Consultant, coach and software developer. Embedding with software development teams to elevate clean coding and testing practices, as well as instill a focus on business value/outcomes.
-                </span>
-                <span class="technologies">
-                    <strong>Tech:</strong>
+                <div class="experience">
+                    <h3 class="experience-title">Consultant / Software Developer</h3>
+                    <span class="experience-company">Leading Agile</span>
+                    <span class="experience-date-range">January 2022 - Present</span>
+                    <span class="experience-responsibilities">
+                        Consultant, coach and software developer. Embedding with software development teams to elevate clean coding and testing practices, as well as instill a focus on business value/outcomes.
+                    </span>
+                    <span class="experience-technologies">
+                        <strong>Tech:</strong>
+                        <ul>
+                            <li>.NET Framework</li>
+                            <li>Angular</li>
+                            <li>ASP.NET Core</li>
+                            <li>Azure</li>
+                            <li>Docker</li>
+                            <li>Entity Framework</li>
+                            <li>JavaScript</li>
+                            <li>Microservices</li>
+                            <li>Node.js</li>
+                            <li>OAuth3/OpenID Connect</li>
+                            <li>Python</li>
+                            <li>SQL Server</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </span>
+                </div>
+
+                <div class="experience">
+                    <h3 class="experience-title">Partner / Co-Founder / Software Developer</h3>
+                    <span class="experience-company">Hurley + Collective</span>
+                    <span class="experience-date-range">April 2018 - Present</span>
+                    <span class="experience-location">Davison, MI</span>
+                    <span class="experience-responsibilities">
+                        Consultant, systems architect and lead developer for our small company. Focused on building robust and maintainable systems for clients and supporting those systems long-term.
+                    </span>
+                    <span class="experience-technologies">
+                        <strong>Tech:</strong>
+                        <ul>
+                            <li>.NET Framework</li>
+                            <li>ASP.NET Core</li>
+                            <li>Azure</li>
+                            <li>Docker</li>
+                            <li>Entity Framework</li>
+                            <li>JavaScript</li>
+                            <li>Microservices</li>
+                            <li>OAuth3/OpenID Connect</li>
+                            <li>Python</li>
+                            <li>SQL Server</li>
+                            <li>TypeScript</li>
+                        </ul>
+                    </span>
+                </div>
+
+                <div class="experience">
+                    <h3 class="experience-title">Software Developer / Coach</h3>
+                    <span class="experience-company">Pillar Technology</span>
+                    <span class="experience-date-range">Sept 2013 - April 2018 (4 yrs 8 mos)</span>
+                    <span class="experience-location">Ann Arbor, MI</span>
+                    <span class="experience-responsibilities">
+                        Designed and developed software in a variety of team sizes and Agile methodologies for our clients. Assisted sales team with technical guidance. Embedded within client teams serving as TDD (test driven development) coach.
+                    </span>
+                    <span class="experience-technologies">
+                        <strong>Tech:</strong>
+                        <ul>
+                            <li>.NET Framework</li>
+                            <li>ASP.NET Core</li>
+                            <li>Azure</li>
+                            <li>Azure Service Fabric</li>
+                            <li>Entity Framework</li>
+                            <li>Java</li>
+                            <li>JavaScript</li>
+                            <li>Microservices</li>
+                            <li>OAuth3/OpenID Connect</li>
+                            <li>Python</li>
+                            <li>SQL Server</li>
+                            <li>TypeScript</li>
+                            <li>WPF</li>
+                        </ul>
+                    </span>
+                </div>
+
+                <div class="experience">
+                    <h3 class="experience-title">Software Developer</h3>
+                    <span class="experience-company">Thomson Reuters</span>
+                    <span class="experience-date-range">Mar 2012 - Sept 2013 (1 yrs 7 mos)</span>
+                    <span class="experience-location">Bingham Farms, MI</span>
+                    <span class="experience-responsibilities">
+                        Developed software within a large product team with multiple sub-teams using Agile/Scrum methodologies. Designed and developed configuration-driven authorization module for said product. Acted as coach for junior and mid-level developers.
+                    </span>
+                    <span class="experience-technologies">
+                        <strong>Tech:</strong>
+                        <ul>
+                            <li>.NET Framework</li>
+                            <li>ASP.NET</li>
+                            <li>Entity Framework</li>
+                            <li>Silverlight</li>
+                            <li>SQL Server</li>
+                            <li>WCF</li>
+                            <li>WPF</li>
+                        </ul>
+                    </span>
+                </div>
+
+                <div class="experience">
+                    <h3 class="experience-title">Software Developer</h3>
+                    <span class="experience-company">Diplomat Specialty Pharmacy</span>
+                    <span class="experience-date-range">Jun 2011 - Feb 2012 (9 mos)</span>
+                    <span class="experience-location">Flint, MI</span>
+                    <span class="experience-responsibilities">
+                        Developed software using Agile/Scrum methodologies for a legacy ASP (classic) application upgrade to ASP.NET.
+                    </span>
+                    <span class="experience-technologies">
+                        <strong>Tech:</strong>
+                        <ul>
+                            <li>.NET Framework</li>
+                            <li>ASP.NET</li>
+                            <li>Entity Framework</li>
+                            <li>SQL Server</li>
+                        </ul>
+                    </span>
+                </div>
+
+                <div class="experience">
+                    <h3 class="experience-title">Software Developer</h3>
+                    <span class="experience-company">Bay-Arenac Behavioral Health</span>
+                    <span class="experience-date-range">Jun 2007 - Jun 2011 (4 yrs 1 mo)</span>
+                    <span class="experience-location">Flint, MI</span>
+                    <span class="experience-responsibilities">
+                        Designed, developed and maintained an internal Medicaid eligibility lookup desktop application. Worked on multiple teams building internal web applications and reports.
+                    </span>
+                    <span class="experience-technologies">
+                        <strong>Tech:</strong>
+                        <ul>
+                            <li>.NET Framework</li>
+                            <li>ASP.NET</li>
+                            <li>BizTalk</li>
+                            <li>Entity Framework</li>
+                            <li>SQL Server</li>
+                            <li>WCF</li>
+                            <li>WPF</li>
+                        </ul>
+                    </span>
+                </div>
+
+                <div class="experience">
+                    <h3 class="experience-title">Software Developer</h3>
+                    <span class="experience-company">NBI Solutions</span>
+                    <span class="experience-date-range">May 2003 - Oct 2005 (2 yrs 6 mo)</span>
+                    <span class="experience-location">Troy, MI</span>
+                    <span class="experience-responsibilities">
+                        Developed software used to estimate and configure networking/server cabinets and other network-related equipment for deployment within General Motors facilities.
+                    </span>
+                    <span class="experience-technologies">
+                        <strong>Tech:</strong>
+                        <ul>
+                            <li>.NET Framework</li>
+                            <li>ASP.NET</li>
+                            <li>SQL Server</li>
+                            <li>VBA</li>
+                        </ul>
+                    </span>
+                </div>
+            </section>
+
+            <section class="skills-section">
+                <h2>Skills</h2>
+
+                <div class="skills">
+                    <h3>
+                        Expert (
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        )
+                    </h3>
+                    <ul>
+                        <li><a href="https://docs.microsoft.com/en-us/aspnet/core/">ASP.NET/ASP.NET Core</a></li>
+                        <li>C#</li>
+                        <li>Entity Framework</li>
+                        <li>Test Driven Development</li>
+                    </ul>
+                </div>
+
+                <div class="skills">
+                    <h3>
+                        Advanced (
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
+                        )
+                    </h3>
                     <ul>
                         <li>.NET Framework</li>
-                        <li>Angular</li>
-                        <li>ASP.NET Core</li>
-                        <li>Azure</li>
-                        <li>Docker</li>
-                        <li>Entity Framework</li>
+                        <li>Agile Methodologies</li>
+                        <li><a href="https://www.appveyor.com/">AppVeyor (CI/CD provider)</a></li>
+                        <li><a href="https://auth0.com/">Auth0 (OAuth3/OpenID Connect provider)</a></li>
+                        <li>Azure Service Bus</li>
+                        <li><a href="https://www.docker.com/">Docker</a></li>
+                        <li>Domain Driven Design (DDD)</li>
+                        <li><a href="https://github.com/">Git/GitHub</a></li>
+                        <li>HTML/CSS</li>
                         <li>JavaScript</li>
-                        <li>Microservices</li>
-                        <li>Node.js</li>
-                        <li>OAuth3/OpenID Connect</li>
+                        <li><a href="https://github.com/jbogard/MediatR/">MediatR</a></li>
+                        <li>Microservices Architecture</li>
+                        <li><a href="https://www.microsoft.com/en-us/sql-server/">Microsoft SQL Server</a></li>
+                        <li><a href="https://nodejs.org/">Node.js</a></li>
                         <li>Python</li>
-                        <li>SQL Server</li>
-                        <li>TypeScript</li>
                     </ul>
-                </span>
-            </div>
+                </div>
 
-            <div class="experience">
-                <h3 class="job-title">Partner / Co-Founder / Software Developer</h3>
-                <span class="company">Hurley + Collective</span>
-                <span class="date-range">April 2018 - Present</span>
-                <span class="location">Davison, MI</span>
-                <span class="responsibilities">
-                    Consultant, systems architect and lead developer for our small company. Focused on building robust and maintainable systems for clients and supporting those systems long-term.
-                </span>
-                <span class="technologies">
-                    <strong>Tech:</strong>
+                <div class="skills">
+                    <h3>
+                        Familiar (
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
+                        <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
+                        )
+                    </h3>
                     <ul>
-                        <li>.NET Framework</li>
-                        <li>ASP.NET Core</li>
-                        <li>Azure</li>
-                        <li>Docker</li>
-                        <li>Entity Framework</li>
-                        <li>JavaScript</li>
-                        <li>Microservices</li>
+                        <li>Active Directory</li>
+                        <li><a href="https://angular.io/">Angular</a></li>
+                        <li><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB</a></li>
+                        <li><a href="https://azure.microsoft.com/en-us/services/service-fabric/">Azure Service Fabric</a></li>
+                        <li><a href="https://identityserver4.readthedocs.io/">Identity Server</a></li>
+                        <li><a href="https://www.java.com">Java</a></li>
+                        <li><a href="https://www.jenkins.io/">Jenkins (CI/CD provider)</a></li>
+                        <li><a href="https://kafka.apache.org/">Kafka</a></li>
+                        <li>MySQL</li>
                         <li>OAuth3/OpenID Connect</li>
-                        <li>Python</li>
-                        <li>SQL Server</li>
-                        <li>TypeScript</li>
+                        <li>Oracle</li>
+                        <li><a href="https://reactjs.org/">React</a></li>
+                        <li>SQL Server Reporting Services (SSRS)</li>
+                        <li><a href="https://stenciljs.com/"></a>Stencil.js</li>
+                        <li><a href="https://vuejs.org/">Vue.js</a></li>
+                        <li>WPF/XAML</li>
                     </ul>
-                </span>
-            </div>
+                </div>
 
-            <div class="experience">
-                <h3 class="job-title">Software Developer / Coach</h3>
-                <span class="company">Pillar Technology</span>
-                <span class="date-range">Sept 2013 - April 2018 (4 yrs 8 mos)</span>
-                <span class="location">Ann Arbor, MI</span>
-                <span class="responsibilities">
-                    Designed and developed software in a variety of team sizes and Agile methodologies for our clients. Assisted sales team with technical guidance. Embedded within client teams serving as TDD (test driven development) coach.
-                </span>
-                <span class="technologies">
-                    <strong>Tech:</strong>
-                    <ul>
-                        <li>.NET Framework</li>
-                        <li>ASP.NET Core</li>
-                        <li>Azure</li>
-                        <li>Azure Service Fabric</li>
-                        <li>Entity Framework</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>Microservices</li>
-                        <li>OAuth3/OpenID Connect</li>
-                        <li>Python</li>
-                        <li>SQL Server</li>
-                        <li>TypeScript</li>
-                        <li>WPF</li>
-                    </ul>
-                </span>
-            </div>
-
-            <div class="experience">
-                <h3 class="job-title">Software Developer</h3>
-                <span class="company">Thomson Reuters</span>
-                <span class="date-range">Mar 2012 - Sept 2013 (1 yrs 7 mos)</span>
-                <span class="location">Bingham Farms, MI</span>
-                <span class="responsibilities">
-                    Developed software within a large product team with multiple sub-teams using Agile/Scrum methodologies. Designed and developed configuration-driven authorization module for said product. Acted as coach for junior and mid-level developers.
-                </span>
-                <span class="technologies">
-                    <strong>Tech:</strong>
-                    <ul>
-                        <li>.NET Framework</li>
-                        <li>ASP.NET</li>
-                        <li>Entity Framework</li>
-                        <li>Silverlight</li>
-                        <li>SQL Server</li>
-                        <li>WCF</li>
-                        <li>WPF</li>
-                    </ul>
-                </span>
-            </div>
-
-            <div class="experience">
-                <h3 class="job-title">Software Developer</h3>
-                <span class="company">Diplomat Specialty Pharmacy</span>
-                <span class="date-range">Jun 2011 - Feb 2012 (9 mos)</span>
-                <span class="location">Flint, MI</span>
-                <span class="responsibilities">
-                    Developed software using Agile/Scrum methodologies for a legacy ASP (classic) application upgrade to ASP.NET.
-                </span>
-                <span class="technologies">
-                    <strong>Tech:</strong>
-                    <ul>
-                        <li>.NET Framework</li>
-                        <li>ASP.NET</li>
-                        <li>Entity Framework</li>
-                        <li>SQL Server</li>
-                    </ul>
-                </span>
-            </div>
-
-            <div class="experience">
-                <h3 class="job-title">Software Developer</h3>
-                <span class="company">Bay-Arenac Behavioral Health</span>
-                <span class="date-range">Jun 2007 - Jun 2011 (4 yrs 1 mo)</span>
-                <span class="location">Flint, MI</span>
-                <span class="responsibilities">
-                    Designed, developed and maintained an internal Medicaid eligibility lookup desktop application. Worked on multiple teams building internal web applications and reports.
-                </span>
-                <span class="technologies">
-                    <strong>Tech:</strong>
-                    <ul>
-                        <li>.NET Framework</li>
-                        <li>ASP.NET</li>
-                        <li>BizTalk</li>
-                        <li>Entity Framework</li>
-                        <li>SQL Server</li>
-                        <li>WCF</li>
-                        <li>WPF</li>
-                    </ul>
-                </span>
-            </div>
-
-            <div class="experience">
-                <h3 class="job-title">Software Developer</h3>
-                <span class="company">NBI Solutions</span>
-                <span class="date-range">May 2003 - Oct 2005 (2 yrs 6 mo)</span>
-                <span class="location">Troy, MI</span>
-                <span class="responsibilities">
-                    Developed software used to estimate and configure networking/server cabinets and other network-related equipment for deployment within General Motors facilities.
-                </span>
-                <span class="technologies">
-                    <strong>Tech:</strong>
-                    <ul>
-                        <li>.NET Framework</li>
-                        <li>ASP.NET</li>
-                        <li>SQL Server</li>
-                        <li>VBA</li>
-                    </ul>
-                </span>
-            </div>
-
-            <h2>Skills</h2>
-
-            <div class="skills">
-                <h3>
-                    Expert (
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    )
-                </h3>
-                <ul>
-                    <li><a href="https://docs.microsoft.com/en-us/aspnet/core/">ASP.NET/ASP.NET Core</a></li>
-                    <li>C#</li>
-                    <li>Entity Framework</li>
-                    <li>Test Driven Development</li>
-                </ul>
-            </div>
-
-            <div class="skills">
-                <h3>
-                    Advanced (
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
-                    )
-                </h3>
-                <ul>
-                    <li>.NET Framework</li>
-                    <li>Agile Methodologies</li>
-                    <li><a href="https://www.appveyor.com/">AppVeyor (CI/CD provider)</a></li>
-                    <li><a href="https://auth0.com/">Auth0 (OAuth3/OpenID Connect provider)</a></li>
-                    <li>Azure Service Bus</li>
-                    <li><a href="https://www.docker.com/">Docker</a></li>
-                    <li>Domain Driven Design (DDD)</li>
-                    <li><a href="https://github.com/">Git/GitHub</a></li>
-                    <li>HTML/CSS</li>
-                    <li>JavaScript</li>
-                    <li><a href="https://github.com/jbogard/MediatR/">MediatR</a></li>
-                    <li>Microservices Architecture</li>
-                    <li><a href="https://www.microsoft.com/en-us/sql-server/">Microsoft SQL Server</a></li>
-                    <li><a href="https://nodejs.org/">Node.js</a></li>
-                    <li>Python</li>
-                </ul>
-            </div>
-
-            <div class="skills">
-                <h3>
-                    Familiar (
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-filled.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
-                    <object class="svg" type="image/svg+xml" data="svg/star-empty.svg"></object>
-                    )
-                </h3>
-                <ul>
-                    <li>Active Directory</li>
-                    <li><a href="https://angular.io/">Angular</a></li>
-                    <li><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB</a></li>
-                    <li><a href="https://azure.microsoft.com/en-us/services/service-fabric/">Azure Service Fabric</a></li>
-                    <li><a href="https://identityserver4.readthedocs.io/">Identity Server</a></li>
-                    <li><a href="https://www.java.com">Java</a></li>
-                    <li><a href="https://www.jenkins.io/">Jenkins (CI/CD provider)</a></li>
-                    <li><a href="https://kafka.apache.org/">Kafka</a></li>
-                    <li>MySQL</li>
-                    <li>OAuth3/OpenID Connect</li>
-                    <li>Oracle</li>
-                    <li><a href="https://reactjs.org/">React</a></li>
-                    <li>SQL Server Reporting Services (SSRS)</li>
-                    <li><a href="https://stenciljs.com/"></a>Stencil.js</li>
-                    <li><a href="https://vuejs.org/">Vue.js</a></li>
-                    <li>WPF/XAML</li>
-                </ul>
-            </div>
+            </section>
+            
         </div>
 
     </body>
