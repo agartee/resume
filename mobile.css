@@ -32,6 +32,11 @@
             width: 16px;
         }
 
+        .personal-links-section li {
+            margin-top: var(--margin-small);
+            margin-bottom: var(--margin-small);
+        }
+
     .skills li {
         /* prevent overlap of text with next-column bullets */
         margin-right: 1.2rem;

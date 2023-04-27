@@ -3,7 +3,26 @@
         display:none;
     }
     
+    .title-section, .personal-links-section {
+        background-color: transparent;
+    }
+    
+    .title-section,
+    .personal-links-section ul,
+    .about-section {
+        margin-left: var(--margin-large);
+    }
+    
+    .personal-links-section .svg {
+        width: 16px;
+    }
+    
+    .personal-links-section li {
+        margin-top: var(--margin-small);
+        margin-bottom: var(--margin-small);
+    }
+    
     .experience {
         break-inside: avoid;
-    }
+    }    
 }
