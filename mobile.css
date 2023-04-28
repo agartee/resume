@@ -26,6 +26,7 @@
 
     .about-section {
         margin-left: var(--margin-large);
+        margin-right: var(--margin-large);
     }
     
     .personal-links-section {
