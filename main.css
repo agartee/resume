@@ -59,6 +59,7 @@ body {
 
 .experience-company {
     color: var(--secondary-text-color);
+    white-space: nowrap;
 }
 
 .experience-date-range, 
