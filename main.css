@@ -4,7 +4,8 @@
     --primary-color: white;
     --secondary-color: #8ab5e3;
     --tertiary-color: gainsboro;
-    --text-color: black;
+    --primary-text-color: black;
+    --secondary-text-color: #384b93;
     --avatar-border-width: 25px;
     --avatar-padding: 40px;
     --avatar-border-color: white;
@@ -13,7 +14,7 @@
 }
 
 body {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     font-family: var(--font-family);
     font-size: var(--font-size);
     margin: 0;
@@ -47,7 +48,7 @@ body {
 }
 
 .personal-links-section a, .about-section a, .skills a {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     text-decoration: none;
 }
 
@@ -56,8 +57,11 @@ body {
     margin-right: var(--margin-large);
 }
 
+.experience-section h3 {
+    margin-bottom: 0;
+}
+
 .experience-title, 
-.experience-company, 
 .experience-date-range, 
 .experience-location, 
 .experience-responsibilities,
@@ -66,13 +70,12 @@ body {
 }
 
 .experience-company {
-    font-size: 1.2rem;
-    font-style: italic;
+    color: var(--secondary-text-color);
 }
 
 .experience-date-range, 
 .experience-location {
-    font-size: 1.1rem;
+    font-style: italic;
 }
 
 .experience-technologies {
