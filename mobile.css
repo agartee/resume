@@ -1,4 +1,8 @@
-@media only screen and (max-width: 812px) {
+@media only screen and (max-width: 768px) {
+    :root {
+        --personal-link-svg-width: 16px;
+    }
+
     .personal-info-container ul {
         list-style: none;
         display: grid;
@@ -20,25 +24,44 @@
         align-self: center;
     }
 
-    .personal-links-section ul,
     .about-section {
         margin-left: var(--margin-large);
     }
-
+    
     .personal-links-section {
         background-color: var(--tertiary-color);
     }
-        .personal-links-section .svg {
-            width: 16px;
+        .personal-links-section li {
+            margin: var(--margin-small);
         }
 
-        .personal-links-section li {
-            margin-top: var(--margin-small);
-            margin-bottom: var(--margin-small);
+        .personal-links-section .svg {
+            width: var(--personal-link-svg-width);
+            margin-right: var(--margin-small);
         }
 
     .skills li {
         /* prevent overlap of text with next-column bullets */
         margin-right: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .personal-links-section ul {
+        display: flex;
+    }
+
+    .personal-links-section li {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .personal-link-text {
+        display: none;
+    }
+    
+    .skills ul {
+        grid-template-columns: unset;
     }
 }

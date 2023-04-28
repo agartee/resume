@@ -1,7 +1,8 @@
-@media only screen and (min-width: 813px) {
+@media only screen and (min-width: 769px) {
     :root {
         --info-width: 320px;
         --body-width: 800px;
+        --personal-link-svg-width: 24px;
     }
 
     .personal-info-container {
@@ -19,13 +20,18 @@
         }
 
     .avatar-container {
-        margin: 0;
-        padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         height: var(--info-width);
         width: var(--info-width);
+    }
+
+    .avatar {
+        height: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
+        width: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
+        border: var(--avatar-border-width) solid var(--avatar-border-color);
+        border-radius: 50%;
     }
 
     .title-section,
@@ -34,7 +40,8 @@
     }
 
     .personal-links-section .svg {
-        width: 24px;
+        width: var(--personal-link-svg-width);
+        margin-right: var(--margin-small);
     }
 
     .scroll-container {

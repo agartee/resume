@@ -21,13 +21,6 @@ body {
     padding: 0;
 }
 
-.avatar {
-    height: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
-    width: calc(100% - (var(--avatar-border-width) * 2) - (var(--avatar-padding) * 2));
-    border: var(--avatar-border-width) solid var(--avatar-border-color);
-    border-radius: 50%;
-}
-
 .title-section {
     background-color: var(--secondary-color);
 }
@@ -35,21 +28,16 @@ body {
 .personal-info-container ul {
     margin: 0;
     padding: 0;
-}
-
-.personal-links-section li {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
-
-.personal-links-section .svg {
-    margin-right: var(--margin-small);
+    list-style-type: none;
 }
 
 .personal-links-section a, .about-section a, .skills a {
     color: var(--primary-text-color);
-    text-decoration: none;
+}
+
+.personal-link {
+    display: inline-flex;
+    align-items: center;
 }
 
 .scroll-container section {
@@ -108,4 +96,19 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding-left: 1.2rem;
+}
+
+.clickable {
+    position: relative;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
