@@ -3,6 +3,10 @@
         --personal-link-svg-width: 16px;
     }
 
+    body{
+        -webkit-text-size-adjust: 100%;
+    }
+
     .personal-info-container ul {
         list-style: none;
         display: grid;
@@ -48,10 +52,6 @@
 }
 
 @media only screen and (max-width: 480px) {
-    body{
-        -webkit-text-size-adjust: 100%;
-    }
-
     .personal-links-section ul {
         display: flex;
     }
