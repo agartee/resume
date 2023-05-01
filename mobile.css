@@ -19,8 +19,20 @@
 
     .title-section {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         padding: var(--margin-small);
+    }
+
+    .title-section h1, 
+    .title-section span {
+        font-size: x-large;
+        font-weight: normal;
+    }
+
+    .title-section h1::after {
+        content: "|";
+        margin-left: var(--margin-small);
+        margin-right: var(--margin-small);
     }
 
     .title-section span {
@@ -36,6 +48,12 @@
     .personal-links-section {
         background-color: var(--tertiary-color);
     }
+        .personal-links-section ul {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            padding-left: 1.2rem;
+        }
+
         .personal-links-section li {
             margin: var(--margin-small);
         }
@@ -52,6 +70,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+    .personal-links-section {
+        padding: 0;
+    }
+    
     .personal-links-section ul {
         display: flex;
     }
