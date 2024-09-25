@@ -55,5 +55,7 @@
 
         .scroll-container section {
             max-width: var(--body-width);
+            margin-left: var(--margin-large);
+            margin-right: var(--margin-large);
         }
 }

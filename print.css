@@ -1,22 +1,58 @@
 @media print {
+    body {
+        margin: 0;
+        --font-size: 14px;
+    }
+
     .avatar-container {
         display:none;
     }
     
-    .title-section, .personal-links-section {
+    .title-section {
         background-color: transparent;
+        color: black;
+    }
+
+    .title-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-section h1, 
+    .title-section span {
+        font-size: x-large;
+        font-weight: normal;
+    }
+
+    .title-section h1::after {
+        content: "|";
+        margin-left: var(--margin-small);
+        margin-right: var(--margin-small);
+    }
+
+    .title-section span {
+        justify-self: right;
+        align-self: center;
     }
     
+    .personal-link-text {
+        color: black;
+    }
+
+    .personal-links-section ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .personal-links-section .svg {
-        width: 16px;
+        width: 0;
     }
     
-    .personal-links-section li {
-        margin-top: var(--margin-small);
-        margin-bottom: var(--margin-small);
-    }
-    
-    .experience {
+    .experience, .skills-section {
         break-inside: avoid;
-    }    
+    }
+
+    .scroll-container section {
+        margin-left: 0;
+    }
 }

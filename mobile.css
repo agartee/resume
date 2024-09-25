@@ -67,6 +67,11 @@
         /* prevent overlap of text with next-column bullets */
         margin-right: 1.2rem;
     }
+
+    .scroll-container section {
+        margin-left: var(--margin-large);
+        margin-right: var(--margin-large);
+    }
 }
 
 @media only screen and (max-width: 480px) {

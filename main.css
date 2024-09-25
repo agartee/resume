@@ -42,10 +42,7 @@ body {
     align-items: center;
 }
 
-.scroll-container section {
-    margin-left: var(--margin-large);
-    margin-right: var(--margin-large);
-}
+
 
 .experience-section h3 {
     margin-bottom: 0;
