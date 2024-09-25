@@ -35,7 +35,7 @@
         align-self: center;
     }
     
-    .personal-link-text {
+    .personal-link-text, .experience-company {
         color: black;
     }
 
